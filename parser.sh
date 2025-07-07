@@ -6,7 +6,7 @@ json="[]"
 
 curl -O https://data.iana.org/TLD/tlds-alpha-by-domain.txt
 
-sed -i '1d' tlds-alpha-by-domain.txt  
+sed -i '1d' tlds-alpha-by-domain.txt | sort
 
 while IFS= read -r line; do
   line=$(idn --idna-to-unicode $line)
